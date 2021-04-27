@@ -1,9 +1,11 @@
 # TrackmaniaCOTDRestAPI
 
+Based on the leaderboard by <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVwwjM2OoIEWwoiKy1CqMY9oKJ2EXqWvch_gPIrOzL8WtsSoYZ-KjsiZpR3Ygt3U08VW9fxFpRyv6R/pubhtml#"> pointerzio</a>.
+
 Please contact me, if you plan to use this API in your own projects!
 
-Twitter: <a href="https://twitter.com/SoWieMarkus">SoWieMarkus</a>
-Discord: Markus#2348
+* Twitter: <a href="https://twitter.com/SoWieMarkus">SoWieMarkus</a>
+* Discord: Markus#2348
 
 ## Documentation
 
