@@ -105,3 +105,38 @@ GET `/cotd/global`
 }
 ```
 
+### Get the overview of all possible months
+
+GET `/cotd/overview`
+
+```
+{
+  overView: [
+    {
+      year: 2020,
+      month: 11
+    },
+    {
+      year: 2020,
+      month: 12
+    },
+    {
+      year: 2021,
+      month: 1
+    },
+    {
+      year: 2021,
+      month: 2
+    },
+    {
+      year: 2021,
+      month: 3
+    },
+    {
+      year: 2021,
+      month: 4
+    }
+  ]
+}
+```
+
