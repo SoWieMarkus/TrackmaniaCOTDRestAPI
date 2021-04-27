@@ -1,6 +1,8 @@
 package markus.wieland.tmrestapi.trackmaniarestapi.cotd;
 
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.dto.COTDDTO;
+import markus.wieland.tmrestapi.trackmaniarestapi.cotd.dto.MonthOverView;
+import markus.wieland.tmrestapi.trackmaniarestapi.cotd.dto.OverView;
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.dto.PlayerResultDTO;
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.models.COTD;
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.models.PlayerResult;
@@ -28,7 +30,7 @@ public class CotdManager {
         this.playerResultRepository = playerResultRepository;
     }
 
-    public void update(int year, int month, int day, COTDDTO cotddto) {
+    public void update(COTDDTO cotddto) {
         COTD cotd = cotdDayRepository.findById(cotddto.getId()).orElse(new COTD(cotddto));
         List<PlayerResult> playerResults = new ArrayList<>();
 
@@ -51,5 +53,11 @@ public class CotdManager {
         return cotdDayRepository.findByYearAndMonthAndDay(year, month, day).orElse(null);
     }
 
-
+    public OverView getAvailableMonths(){
+        OverView overViews = new OverView();
+        for (COTD cotd : cotdDayRepository.findAll()){
+            overViews.add(cotd.getYear(), cotd.getMonth());
+        }
+        return overViews;
+    }
 }

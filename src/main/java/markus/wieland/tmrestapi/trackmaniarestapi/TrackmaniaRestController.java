@@ -1,11 +1,15 @@
 package markus.wieland.tmrestapi.trackmaniarestapi;
 
+import markus.wieland.tmrestapi.trackmaniarestapi.cotd.dto.MonthOverView;
+import markus.wieland.tmrestapi.trackmaniarestapi.cotd.dto.OverView;
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.models.COTD;
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.CotdManager;
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.dto.COTDDTO;
 import markus.wieland.tmrestapi.trackmaniarestapi.leaderboard.models.LeaderBoard;
 import markus.wieland.tmrestapi.trackmaniarestapi.leaderboard.LeaderBoardManager;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class TrackmaniaRestController {
@@ -20,7 +24,7 @@ public class TrackmaniaRestController {
 
     @PostMapping("/cotd/update/{year}/{month}/{day}")
     public void updateDay(@PathVariable int year, @PathVariable int month, @PathVariable int day, @RequestBody COTDDTO cotdDTO) {
-        cotdManager.update(year, month, day, cotdDTO);
+        cotdManager.update(cotdDTO);
         leaderBoardManager.update(year, month);
     }
 
@@ -37,6 +41,11 @@ public class TrackmaniaRestController {
     @GetMapping("/cotd/global")
     public LeaderBoard getGlobalLeaderBoard() {
         return leaderBoardManager.getGlobalLeaderBoard();
+    }
+
+    @GetMapping("/cotd/overview")
+    public OverView getAvailableMonths() {
+        return cotdManager.getAvailableMonths();
     }
 
 
