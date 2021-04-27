@@ -1,5 +1,7 @@
 # Trackmania COTD Rest-API
 
+DISCLAIMER! This NOT an official API! Its not related to Nadeo or Trackmania.
+
 Based on the leaderboard by <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVwwjM2OoIEWwoiKy1CqMY9oKJ2EXqWvch_gPIrOzL8WtsSoYZ-KjsiZpR3Ygt3U08VW9fxFpRyv6R/pubhtml#"> pointerzio</a>.
 
 Please contact me, if you plan to use this API in your own projects!
