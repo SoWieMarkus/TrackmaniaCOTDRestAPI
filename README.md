@@ -13,7 +13,7 @@ Please contact me, if you plan to use this API in your own projects!
 
 ### Get the result of a cup of the day
 
-**IMPORTANT** The `zone` attribute is NOT a Json-Object ^^' You ask why? ... Well I was to lazy to create a new repository to store the zones. So if you want you the zone object make sure to deserialize it! ^^
+**IMPORTANT** The `zone` attribute is NOT a Json-Object ^^' You ask why? ... Well I was to lazy to create a new repository to store the zones. So if you want to use the zone object make sure to deserialize it! ^^
 
 GET `/cotd/<year>/<month>/<day>`
 
