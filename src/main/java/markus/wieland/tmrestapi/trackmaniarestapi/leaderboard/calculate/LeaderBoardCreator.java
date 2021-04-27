@@ -1,7 +1,7 @@
-package markus.wieland.tmrestapi.trackmaniarestapi.leaderboard;
+package markus.wieland.tmrestapi.trackmaniarestapi.leaderboard.calculate;
 
-import markus.wieland.tmrestapi.trackmaniarestapi.cotd.COTD;
-import markus.wieland.tmrestapi.trackmaniarestapi.cotd.PlayerResult;
+import markus.wieland.tmrestapi.trackmaniarestapi.cotd.models.COTD;
+import markus.wieland.tmrestapi.trackmaniarestapi.cotd.models.PlayerResult;
 
 import java.util.ArrayList;
 import java.util.HashMap;

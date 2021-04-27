@@ -1,6 +1,6 @@
 package markus.wieland.tmrestapi.trackmaniarestapi.cotd.repositories;
 
-import markus.wieland.tmrestapi.trackmaniarestapi.cotd.COTD;
+import markus.wieland.tmrestapi.trackmaniarestapi.cotd.models.COTD;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

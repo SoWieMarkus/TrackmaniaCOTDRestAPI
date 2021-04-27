@@ -1,9 +1,9 @@
 package markus.wieland.tmrestapi.trackmaniarestapi;
 
-import markus.wieland.tmrestapi.trackmaniarestapi.cotd.COTD;
+import markus.wieland.tmrestapi.trackmaniarestapi.cotd.models.COTD;
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.CotdManager;
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.dto.COTDDTO;
-import markus.wieland.tmrestapi.trackmaniarestapi.leaderboard.LeaderBoard;
+import markus.wieland.tmrestapi.trackmaniarestapi.leaderboard.models.LeaderBoard;
 import markus.wieland.tmrestapi.trackmaniarestapi.leaderboard.LeaderBoardManager;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,20 +25,19 @@ public class TrackmaniaRestController {
     }
 
     @GetMapping("/cotd/{year}/{month}/{day}")
-    public COTD getCotdByYearAndMonthAndDay(@PathVariable int year, @PathVariable int month, @PathVariable int day){
+    public COTD getCotdByYearAndMonthAndDay(@PathVariable int year, @PathVariable int month, @PathVariable int day) {
         return cotdManager.getCotdByYearAndMonthAndDay(year, month, day);
     }
 
     @GetMapping("/cotd/{year}/{month}")
-    public LeaderBoard getLeaderBoardByYearAndMonth(@PathVariable int year, @PathVariable int month){
+    public LeaderBoard getLeaderBoardByYearAndMonth(@PathVariable int year, @PathVariable int month) {
         return leaderBoardManager.getLeaderBoardByYearAndMonth(year, month);
     }
 
     @GetMapping("/cotd/global")
-    public LeaderBoard getGlobalLeaderBoard(){
+    public LeaderBoard getGlobalLeaderBoard() {
         return leaderBoardManager.getGlobalLeaderBoard();
     }
-
 
 
 }

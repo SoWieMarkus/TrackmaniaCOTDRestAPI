@@ -1,4 +1,4 @@
-package markus.wieland.tmrestapi.trackmaniarestapi.cotd;
+package markus.wieland.tmrestapi.trackmaniarestapi.cotd.models;
 
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.dto.PlayerResultDTO;
 

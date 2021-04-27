@@ -1,4 +1,4 @@
-package markus.wieland.tmrestapi.trackmaniarestapi.cotd;
+package markus.wieland.tmrestapi.trackmaniarestapi.cotd.models;
 
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.dto.COTDDTO;
 
@@ -46,7 +46,6 @@ public class COTD {
 
         this.players = cotddto.getPlayers();
         this.leaderBoardId = cotddto.getLeaderBoardId();
-
     }
 
     public COTD() {

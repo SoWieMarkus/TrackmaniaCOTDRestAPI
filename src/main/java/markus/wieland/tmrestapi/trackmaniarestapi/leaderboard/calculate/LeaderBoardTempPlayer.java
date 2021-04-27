@@ -1,4 +1,4 @@
-package markus.wieland.tmrestapi.trackmaniarestapi.leaderboard;
+package markus.wieland.tmrestapi.trackmaniarestapi.leaderboard.calculate;
 
 import java.util.HashMap;
 
@@ -9,10 +9,14 @@ public class LeaderBoardTempPlayer {
     private int amountThird;
 
     private int points;
+    private int bestResult;
 
     private String playerName;
     private String playerId;
     private String zone;
+
+    private int totalRankingScore;
+    private int totalParticipation;
 
     public void setAmountFirst(int amountFirst) {
         this.amountFirst = amountFirst;
@@ -149,6 +153,9 @@ public class LeaderBoardTempPlayer {
         this.amountThird = 0;
         this.points = 0;
         this.zone = zone;
+        this.totalParticipation = 0;
+        this.totalRankingScore = 0;
+        this.bestResult = 1000;
     }
 
     public void addResult(int position) {
@@ -165,5 +172,32 @@ public class LeaderBoardTempPlayer {
         }
 
         points += POINT_SYSTEM.get(position);
+        if (position < bestResult) bestResult = position;
+        totalParticipation++;
+        totalRankingScore += position;
+    }
+
+    public int getBestResult() {
+        return bestResult;
+    }
+
+    public void setBestResult(int bestResult) {
+        this.bestResult = bestResult;
+    }
+
+    public int getTotalRankingScore() {
+        return totalRankingScore;
+    }
+
+    public void setTotalRankingScore(int totalRankingScore) {
+        this.totalRankingScore = totalRankingScore;
+    }
+
+    public int getTotalParticipation() {
+        return totalParticipation;
+    }
+
+    public void setTotalParticipation(int totalParticipation) {
+        this.totalParticipation = totalParticipation;
     }
 }

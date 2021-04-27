@@ -1,4 +1,4 @@
-package markus.wieland.tmrestapi.trackmaniarestapi.leaderboard;
+package markus.wieland.tmrestapi.trackmaniarestapi.leaderboard.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

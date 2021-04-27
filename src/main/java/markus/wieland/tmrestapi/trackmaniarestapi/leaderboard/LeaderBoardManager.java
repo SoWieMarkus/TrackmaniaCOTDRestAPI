@@ -1,8 +1,11 @@
 package markus.wieland.tmrestapi.trackmaniarestapi.leaderboard;
 
-import markus.wieland.tmrestapi.trackmaniarestapi.cotd.COTD;
-import markus.wieland.tmrestapi.trackmaniarestapi.cotd.dto.COTDDTO;
+import markus.wieland.tmrestapi.trackmaniarestapi.cotd.models.COTD;
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.repositories.COTDDayRepository;
+import markus.wieland.tmrestapi.trackmaniarestapi.leaderboard.calculate.LeaderBoardCreator;
+import markus.wieland.tmrestapi.trackmaniarestapi.leaderboard.calculate.LeaderBoardTempPlayer;
+import markus.wieland.tmrestapi.trackmaniarestapi.leaderboard.models.LeaderBoard;
+import markus.wieland.tmrestapi.trackmaniarestapi.leaderboard.models.LeaderBoardPlayer;
 import markus.wieland.tmrestapi.trackmaniarestapi.leaderboard.repositories.LeaderBoardPlayerRepository;
 import markus.wieland.tmrestapi.trackmaniarestapi.leaderboard.repositories.LeaderBoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +23,8 @@ public class LeaderBoardManager {
     private LeaderBoardRepository leaderBoardRepository;
     private COTDDayRepository cotdDayRepository;
 
+    private static final String GLOBAL_LEADER_BOARD = "global";
+
     @Autowired
     public void setLeaderBoardPlayerRepository(LeaderBoardPlayerRepository leaderBoardPlayerRepository) {
         this.leaderBoardPlayerRepository = leaderBoardPlayerRepository;
@@ -35,7 +40,7 @@ public class LeaderBoardManager {
     }
 
     public LeaderBoard getGlobalLeaderBoard() {
-        Optional<LeaderBoard> global = leaderBoardRepository.findById("global");
+        Optional<LeaderBoard> global = leaderBoardRepository.findById(GLOBAL_LEADER_BOARD);
         return global.orElse(null);
     }
 
@@ -47,15 +52,17 @@ public class LeaderBoardManager {
         leaderBoardCreatorMonth.calculate(new ArrayList<>(cotdDayRepository.findByYearAndMonth(year, month)));
 
         LeaderBoard leaderBoard = leaderBoardRepository.findByYearAndMonth(year, month).orElse(new LeaderBoard(year, month));
-        LeaderBoard global = leaderBoardRepository.findById("global").orElse(new LeaderBoard("global"));
+        LeaderBoard global = leaderBoardRepository.findById(GLOBAL_LEADER_BOARD).orElse(new LeaderBoard(GLOBAL_LEADER_BOARD));
 
         List<LeaderBoardPlayer> leaderBoardPlayers = new ArrayList<>();
 
+        int position = 1;
         for (LeaderBoardTempPlayer leaderBoardTempPlayer : leaderBoardCreatorMonth.standings()) {
             String id = LeaderBoardPlayer.buildId(year, month, leaderBoardTempPlayer.getPlayerId());
             LeaderBoardPlayer leaderBoardPlayer = leaderBoardPlayerRepository.findById(id).orElse(new LeaderBoardPlayer());
             leaderBoardPlayer.setId(id);
-            leaderBoardPlayer.update(leaderBoardTempPlayer);
+            leaderBoardPlayer.update(leaderBoardTempPlayer, position);
+            position++;
             leaderBoardPlayers.add(leaderBoardPlayer);
         }
 
@@ -66,11 +73,13 @@ public class LeaderBoardManager {
 
         List<LeaderBoardPlayer> leaderBoardPlayersGlobal = new ArrayList<>();
 
+        position = 1;
         for (LeaderBoardTempPlayer leaderBoardTempPlayer : leaderBoardCreatorGlobal.standings()) {
             String id = LeaderBoardPlayer.buildId(leaderBoardTempPlayer.getPlayerId());
             LeaderBoardPlayer leaderBoardPlayer = leaderBoardPlayerRepository.findById(id).orElse(new LeaderBoardPlayer());
             leaderBoardPlayer.setId(id);
-            leaderBoardPlayer.update(leaderBoardTempPlayer);
+            leaderBoardPlayer.update(leaderBoardTempPlayer, position);
+            position++;
             leaderBoardPlayersGlobal.add(leaderBoardPlayer);
         }
 
@@ -80,7 +89,6 @@ public class LeaderBoardManager {
         leaderBoardRepository.save(global);
 
     }
-
 
 
     @Autowired

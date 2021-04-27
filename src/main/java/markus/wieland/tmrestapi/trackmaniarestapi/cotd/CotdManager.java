@@ -2,6 +2,8 @@ package markus.wieland.tmrestapi.trackmaniarestapi.cotd;
 
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.dto.COTDDTO;
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.dto.PlayerResultDTO;
+import markus.wieland.tmrestapi.trackmaniarestapi.cotd.models.COTD;
+import markus.wieland.tmrestapi.trackmaniarestapi.cotd.models.PlayerResult;
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.repositories.COTDDayRepository;
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.repositories.PlayerResultRepository;
 import org.springframework.beans.factory.annotation.Autowired;
