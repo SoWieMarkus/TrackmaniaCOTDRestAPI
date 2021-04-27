@@ -79,7 +79,7 @@ GET `/cotd/<year>/<month>`
 
 ### Get the global leaderboard
 
-GET `/cotd/<year>/<month>`
+GET `/cotd/global`
 
 ```
 {
