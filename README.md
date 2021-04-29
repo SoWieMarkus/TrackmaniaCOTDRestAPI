@@ -145,8 +145,8 @@ GET `/cotd/overview`
 GET `/cotd/summary/<year>/<month>/<accountId>` 
 
 Examples: 
-`/cotd/summary/2021/1/05477e79-25fd-48c2-84c7-e1621aa46517` - Returns the stats of a player (here it is GranaDy) for january of 2021
-`/cotd/global/05477e79-25fd-48c2-84c7-e1621aa46517` - Returns the all time stats of a player (here it is GranaDy)
+* `/cotd/summary/2021/1/05477e79-25fd-48c2-84c7-e1621aa46517` - Returns the stats of a player (here it is GranaDy) for january of 2021
+* `/cotd/global/05477e79-25fd-48c2-84c7-e1621aa46517` - Returns the all time stats of a player (here it is GranaDy)
 
 ```
 {
