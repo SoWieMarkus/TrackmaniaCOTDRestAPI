@@ -140,3 +140,42 @@ GET `/cotd/overview`
 }
 ```
 
+### Get results of one player 
+
+GET `/cotd/summary/<year>/<month>/<accountId>` 
+
+Examples: 
+`/cotd/summary/2021/1/05477e79-25fd-48c2-84c7-e1621aa46517` - Returns the stats of a player (here it is GranaDy) for january of 2021
+`/cotd/global/05477e79-25fd-48c2-84c7-e1621aa46517` - Returns the all time stats of a player (here it is GranaDy)
+
+```
+{
+  month: 1,
+  year: 2021,
+  playerResults: [
+    {
+      position: 24,
+      year: 2021,
+      month: 1,
+      day: 1
+    },
+    {
+      position: 2,
+      year: 2021,
+      month: 1,
+      day: 2
+    },
+    {
+      position: 1,
+      year: 2021,
+      month: 1,
+      day: 3
+    },
+    ...
+  ]
+}
+
+
+```
+
+
