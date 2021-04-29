@@ -90,7 +90,6 @@ public class LeaderBoardManager {
 
     }
 
-
     @Autowired
     public void setCotdDayRepository(COTDDayRepository cotdDayRepository) {
         this.cotdDayRepository = cotdDayRepository;

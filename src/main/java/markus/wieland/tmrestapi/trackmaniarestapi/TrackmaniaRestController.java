@@ -2,6 +2,7 @@ package markus.wieland.tmrestapi.trackmaniarestapi;
 
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.dto.MonthOverView;
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.dto.OverView;
+import markus.wieland.tmrestapi.trackmaniarestapi.cotd.dto.summary.PlayerSummary;
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.models.COTD;
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.CotdManager;
 import markus.wieland.tmrestapi.trackmaniarestapi.cotd.dto.COTDDTO;
@@ -46,6 +47,16 @@ public class TrackmaniaRestController {
     @GetMapping("/cotd/overview")
     public OverView getAvailableMonths() {
         return cotdManager.getAvailableMonths();
+    }
+
+    @GetMapping("/cotd/global/{accountId}")
+    public PlayerSummary getGetGlobalPlayerResults(@PathVariable String accountId) {
+        return cotdManager.getGlobalPlayerSummary(cotdManager.getAvailableMonths(),accountId);
+    }
+
+    @GetMapping("/cotd/summary/{year}/{month}/{accountId}")
+    public PlayerSummary getGetGlobalPlayerResults(@PathVariable String accountId, @PathVariable int year, @PathVariable int month) {
+        return cotdManager.getSummaryOfMonth(year, month,accountId);
     }
 
 
