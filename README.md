@@ -15,6 +15,8 @@ Please contact me, if you plan to use this API in your own projects!
 
 **IMPORTANT** The `zone` attribute is NOT a Json-Object ^^' You ask why? ... Well I was to lazy to create a new repository to store the zones. So if you want to use the zone object make sure to deserialize it! ^^
 
+If the position equals -1 the player did qualify but not finish once during the cup. The best result and average position attribute can also be -1.
+
 GET `/cotd/<year>/<month>/<day>`
 
 ```
