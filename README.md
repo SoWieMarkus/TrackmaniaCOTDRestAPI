@@ -11,11 +11,11 @@ Please contact me, if you plan to use this API in your own projects!
 
 ## Documentation
 
-### Get the result of a cup of the day
-
 **IMPORTANT** The `zone` attribute is NOT a Json-Object ^^' You ask why? ... Well I was to lazy to create a new repository to store the zones. So if you want to use the zone object make sure to deserialize it! ^^
 
-If the position equals -1 the player did qualify but not finish once during the cup. The best result and average position attribute can also be -1.
+**IMPORTANT** If a position is equal to 0 the player did not finish during this Cup. So he gets no points for that. Because I thought I set this value to -1, the best result attribute is set to -1, if the player never finished a cup during that time. I know thats very dirty and if I have the time I will change this.
+
+### Get the result of a cup of the day
 
 GET `/cotd/<year>/<month>/<day>`
 
