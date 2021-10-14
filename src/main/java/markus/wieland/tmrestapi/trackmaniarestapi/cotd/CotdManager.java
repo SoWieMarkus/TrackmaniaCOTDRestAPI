@@ -13,6 +13,7 @@ import markus.wieland.tmrestapi.trackmaniarestapi.cotd.repositories.PlayerResult
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -85,5 +86,15 @@ public class CotdManager {
             }
         }
         return new PlayerSummary(month,year,results);
+    }
+
+    public List<COTD> getLatestCOTD(){
+        LocalDateTime localDateTime = LocalDateTime.now();
+        List<COTD> cotds = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            LocalDateTime temp = localDateTime.minusDays(i);
+            cotds.add(cotdDayRepository.findByYearAndMonthAndDay(temp.getYear(), temp.getMonthValue(), temp.getDayOfMonth()).orElse(null));
+        }
+        return cotds;
     }
 }

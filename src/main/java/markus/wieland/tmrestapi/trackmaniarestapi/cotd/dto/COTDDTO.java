@@ -17,10 +17,20 @@ public class COTDDTO {
     private long leaderBoardId;
     private int players;
 
+    private int edition;
+
     private List<PlayerResultDTO> playerResultDTOS;
 
     public long getId() {
         return id;
+    }
+
+    public int getEdition() {
+        return edition;
+    }
+
+    public void setEdition(int edition) {
+        this.edition = edition;
     }
 
     public void setId(long id) {
