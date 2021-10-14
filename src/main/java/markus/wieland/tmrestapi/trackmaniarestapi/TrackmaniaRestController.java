@@ -20,10 +20,8 @@ public class TrackmaniaRestController {
         this.leaderBoardManager = leaderBoardManager;
     }
 
-    @PostMapping("/cotd/update/{year}/{month}/{day}/{auth}")
-    public void updateDay(@PathVariable int year, @PathVariable int month, @PathVariable int day, @RequestBody COTDDTO cotdDTO, @PathVariable String auth) {
-        if (!auth.equals("V2VyIGRpZXNlbiBDb2RlIGtuYWNrdCBpc3QgZ2F5Lg==")) return;
-        System.out.println("Valid request");
+    @PostMapping("/cotd/update/{year}/{month}/{day}")
+    public void updateDay(@PathVariable int year, @PathVariable int month, @PathVariable int day, @RequestBody COTDDTO cotdDTO) {
         cotdManager.update(cotdDTO);
         leaderBoardManager.update(year, month);
     }
