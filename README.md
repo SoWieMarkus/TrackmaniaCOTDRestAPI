@@ -19,7 +19,9 @@ Please contact me, if you plan to use this API in your own projects!
 
 GET `/cotd/<year>/<month>/<day>`
 
-```
+* Example: <a href="http://sowiemarkus.com:8080/cotd/2021/4/26">COTD from 26th of april 2021.</a>
+
+```javascript
 {
   id: 344,
   name: "Cup of the Day 2021-04-26",
@@ -54,7 +56,9 @@ GET `/cotd/<year>/<month>/<day>`
 
 GET `/cotd/<year>/<month>`
 
-```
+* Example: <a href="http://sowiemarkus.com:8080/cotd/2021/4">COTD leaderboard of april 2021.</a>
+
+```javascript
 {
   id: "cotd_leaderboard_2021_4",
   year: 2021,
@@ -83,7 +87,9 @@ GET `/cotd/<year>/<month>`
 
 GET `/cotd/global`
 
-```
+* Example: <a href="http://sowiemarkus.com:8080/cotd/global">Global COTD leaderboard.</a>
+
+```javascript
 {
   id: "global",
   year: 0,
@@ -111,7 +117,9 @@ GET `/cotd/global`
 
 GET `/cotd/overview`
 
-```
+* Example: <a href="http://sowiemarkus.com:8080/cotd/overview">Overview of all possible months</a>
+
+```javascript
 {
   overView: [
     {
@@ -147,10 +155,10 @@ GET `/cotd/overview`
 GET `/cotd/summary/<year>/<month>/<accountId>` 
 
 Examples: 
-* `/cotd/summary/2021/1/05477e79-25fd-48c2-84c7-e1621aa46517` - Returns the stats of a player (here it is GranaDy) for january of 2021
-* `/cotd/global/05477e79-25fd-48c2-84c7-e1621aa46517` - Returns the all time stats of a player (here it is GranaDy)
+* `/cotd/summary/2021/1/05477e79-25fd-48c2-84c7-e1621aa46517` (<a href="http://sowiemarkus.com:8080/cotd/summary/2021/1/05477e79-25fd-48c2-84c7-e1621aa46517">click here</a>) - Returns the stats of a player (here it is GranaDy) for january of 2021
+* `/cotd/global/05477e79-25fd-48c2-84c7-e1621aa46517` (<a href="http://sowiemarkus.com:8080/cotd/global/05477e79-25fd-48c2-84c7-e1621aa46517">click here</a>) - Returns the all time stats of a player (here it is GranaDy)
 
-```
+```javascript
 {
   month: 1,
   year: 2021,
