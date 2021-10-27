@@ -32,4 +32,5 @@ build/
 ### VS Code ###
 .vscode/
 
-.src/main/java/markus/wieland/tmrestapi/trackmaniarestapi/granady
+/src/main/java/markus/wieland/tmrestapi/trackmaniarestapi/granady
+/src/main/java/markus/wieland/tmrestapi/trackmaniarestapi/fuel
