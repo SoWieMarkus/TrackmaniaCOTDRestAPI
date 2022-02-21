@@ -1,5 +1,7 @@
 # Trackmania COTD Rest-API
 
+**IMPORTANT** I am currently extending the api. This will affect the endpoints of the api. So if you plan using it, be aware that it might change soon! :)
+
 DISCLAIMER! This is NOT an official API! Its not related to Nadeo or Trackmania.
 
 Based on the leaderboard by <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSVwwjM2OoIEWwoiKy1CqMY9oKJ2EXqWvch_gPIrOzL8WtsSoYZ-KjsiZpR3Ygt3U08VW9fxFpRyv6R/pubhtml#"> pointerzio</a>.
@@ -19,7 +21,7 @@ Please contact me, if you plan to use this API in your own projects!
 
 GET `/cotd/<year>/<month>/<day>`
 
-* Example: <a href="http://sowiemarkus.com:8080/cotd/2021/4/26">COTD from 26th of april 2021.</a>
+* Example: <a href="http://api.sowiemarkus.com/cotd/2021/4/26">COTD from 26th of april 2021.</a>
 
 ```javascript
 {
@@ -56,7 +58,7 @@ GET `/cotd/<year>/<month>/<day>`
 
 GET `/cotd/<year>/<month>`
 
-* Example: <a href="http://sowiemarkus.com:8080/cotd/2021/4">COTD leaderboard of april 2021.</a>
+* Example: <a href="http://api.sowiemarkus.com/cotd/2021/4">COTD leaderboard of april 2021.</a>
 
 ```javascript
 {
@@ -87,7 +89,7 @@ GET `/cotd/<year>/<month>`
 
 GET `/cotd/global`
 
-* Example: <a href="http://sowiemarkus.com:8080/cotd/global">Global COTD leaderboard.</a>
+* Example: <a href="http://api.sowiemarkus.com/cotd/global">Global COTD leaderboard.</a>
 
 ```javascript
 {
@@ -117,7 +119,7 @@ GET `/cotd/global`
 
 GET `/cotd/overview`
 
-* Example: <a href="http://sowiemarkus.com:8080/cotd/overview">Overview of all possible months</a>
+* Example: <a href="http://api.sowiemarkus.com/cotd/overview">Overview of all possible months</a>
 
 ```javascript
 {
@@ -155,8 +157,8 @@ GET `/cotd/overview`
 GET `/cotd/summary/<year>/<month>/<accountId>` 
 
 Examples: 
-* `/cotd/summary/2021/1/05477e79-25fd-48c2-84c7-e1621aa46517` (<a href="http://sowiemarkus.com:8080/cotd/summary/2021/1/05477e79-25fd-48c2-84c7-e1621aa46517">click here</a>) - Returns the stats of a player (here it is GranaDy) for january of 2021
-* `/cotd/global/05477e79-25fd-48c2-84c7-e1621aa46517` (<a href="http://sowiemarkus.com:8080/cotd/global/05477e79-25fd-48c2-84c7-e1621aa46517">click here</a>) - Returns the all time stats of a player (here it is GranaDy)
+* `/cotd/summary/2021/1/05477e79-25fd-48c2-84c7-e1621aa46517` (<a href="http://api.sowiemarkus.com/cotd/summary/2021/1/05477e79-25fd-48c2-84c7-e1621aa46517">click here</a>) - Returns the stats of a player (here it is GranaDy) for january of 2021
+* `/cotd/global/05477e79-25fd-48c2-84c7-e1621aa46517` (<a href="http://api.sowiemarkus.com/cotd/global/05477e79-25fd-48c2-84c7-e1621aa46517">click here</a>) - Returns the all time stats of a player (here it is GranaDy)
 
 ```javascript
 {
